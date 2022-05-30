@@ -1,0 +1,28 @@
+version: '3.6'
+services:
+    node_backend:
+        build:
+            context: node/.
+            dockerfile: Dockerfile
+        container_name: 'backend_node'
+        ports:
+            - "1050:3000"
+        depends_on:
+            - "db-service1"
+    db-service1:
+        build:
+            context: db/mongo/.
+            dockerfile: Dockerfile
+        container_name: 'mongo'
+        ports:
+            - "27017:27017"
+    react_frontend:
+        build:
+            context: react/.
+            dockerfile: Dockerfile
+        container_name: 'frontend_react'
+        ports:
+            - "3000:3000"
+        depends_on:
+            - "node_backend" 
+

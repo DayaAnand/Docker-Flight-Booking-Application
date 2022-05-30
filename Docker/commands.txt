@@ -1,0 +1,13 @@
+docker images --> list all the images
+
+docker ps -a  --> list all the containers with their docker ID
+
+docker system prune --> delete all the images and containers
+
+docker exec -it <ImagesID> /bin/sh --> For getting access to React-Frontend container terminal
+
+docker exec -it <ImagesID> bash --> For getting access to Mongo and Node container terminal
+
+node --verison --> check the node version inside the container terminal
+
+TO RUN the Application --> .\app.bat up --build -d
